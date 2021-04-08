@@ -2,6 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { EditPerson } from './edit-person';
+import { Meme } from './meme';
+import { MemeImageComponent } from './meme-image/meme-image.component';
 import { StringPerson } from './string-person';
 
 @Injectable({
@@ -12,8 +14,8 @@ export class MemesaverService {
 
 
   //querystrings go here. and anythign else the serviec woud need to function
-  // queryString: string = 'https://memesaver.azurewebsites.net/api/meme/';
-  queryString: string = 'https://localhost:5001/api/meme/';
+  queryString: string = 'https://memesaver.azurewebsites.net/api/meme/';
+  // queryString: string = 'https://localhost:5001/api/meme/';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -43,6 +45,10 @@ export class MemesaverService {
 
   GetPersonById(id: string): Observable<StringPerson> {
     return this.http.get<StringPerson>(`${this.queryString}getpersonbyid/${id}`);
+  }
+
+  GetAllImages(): Observable<Meme[]> {
+    return this.http.get<Meme[]>(`${this.queryString}memes`);
   }
 
 }//end of class

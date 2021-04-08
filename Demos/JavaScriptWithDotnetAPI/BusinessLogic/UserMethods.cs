@@ -186,6 +186,7 @@ namespace BusinessLogic
                 //call method to conver the byte[] to a string
                 var imageString = mapper.ConvertByteArrayToImageString(m.MemeByteArray);
                 memedto.MemeString = imageString;
+                memeDTOs.Add(memedto);
             }
             return memeDTOs;
         }

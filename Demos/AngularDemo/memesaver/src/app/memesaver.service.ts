@@ -14,8 +14,8 @@ export class MemesaverService {
 
 
   //querystrings go here. and anythign else the serviec woud need to function
-  queryString: string = 'https://memesaver.azurewebsites.net/api/meme/';
-  // queryString: string = 'https://localhost:5001/api/meme/';
+  // queryString: string = 'https://memesaver.azurewebsites.net/api/meme/';
+  queryString: string = 'https://localhost:5001/api/meme/';
 
   httpOptions = {
     headers: new HttpHeaders({
